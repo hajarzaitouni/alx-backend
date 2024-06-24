@@ -43,22 +43,22 @@ class Server:
         """ Get a page of the dataset with hypermedia metadata. """
         assert isinstance(index, int) and index >= 0
         assert isinstance(page_size, int) and page_size > 0
-        
+
         current_index = index
-        count_items= 0
+        count_items = 0
         dataset = self.indexed_dataset()
         data = []
-        
+
         while count_items < page_size and current_index < len(dataset):
             if current_index in dataset:
                 data.append(dataset[current_index])
                 count_items += 1
             current_index += 1
         next_index = current_index if current_index < len(dataset) else None
-        
+
         return {
-            "index" : index,
-            "next_index" : next_index,
-            "page_size" : page_size,
-            "data" : data
-        }
+            "index": index,
+            "next_index": next_index,
+            "page_size": page_size,
+            "data": data
+            }
