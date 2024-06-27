@@ -23,8 +23,8 @@ class LIFOCache(BaseCaching):
                 last_key = self.stack.pop()
                 del self.cache_data[last_key]
                 print(f"DISCARD: {last_key}")
-        self.cache_data[key] = item
-        self.stack.append(key)
+            self.cache_data[key] = item
+            self.stack.append(key)
 
     def get(self, key):
         """ get the value by key """
