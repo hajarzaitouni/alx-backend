@@ -19,7 +19,7 @@ app.config.from_object(Config)
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """ Determine the best match for supported languages """
     locale = request.args.get('locale')
     if locale in app.config['LANGUAGES']:
@@ -28,7 +28,7 @@ def get_locale():
 
 
 @app.route('/', strict_slashes=False)
-def index():
+def index() -> str:
     """ return hello world template. """
     return render_template('4-index.html')
 
