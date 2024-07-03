@@ -26,7 +26,7 @@ def get_locale() -> Union[str, None]:
 
 
 @app.route('/', strict_slashes=False)
-def index():
+def index() -> str:
     """ return hello world template. """
     return render_template('3-index.html')
 
