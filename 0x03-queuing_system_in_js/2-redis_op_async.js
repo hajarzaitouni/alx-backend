@@ -18,8 +18,8 @@ const setNewSchool = (schoolName, value) => {
 
 const displaySchoolValue = async (schoolName) => {
   try {
-    const reply = await getAsync(schoolName);
-    console.log(reply);
+    const res = await getAsync(schoolName);
+    console.log(res);
   } catch (error) {
     console.error(error);
   }
